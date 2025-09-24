@@ -34,3 +34,6 @@ ROWS=$(jq -r 'to_entries | .[] | ["\(.key)"] + (.value | to_entries | map(.value
 } > "$OUTPUT_CSV"
 
 echo "Conversion complete. Output saved to '$OUTPUT_CSV'."
+
+#merge two csvs into one based on the first column of csv1 (-1 1) and the first column of csv 2 (-2 1), keeping headers selected from each csv
+#join -t, -o'1.1 1.8 1.15 1.21 1.22 2.2 2.3' -1 1 -2 1 output.csv export.csv > joined.csv
